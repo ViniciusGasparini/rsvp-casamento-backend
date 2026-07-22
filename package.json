@@ -1,0 +1,26 @@
+{
+  "name": "rsvp-casamento-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API de confirmação de presença do casamento de Vinicius e Noemia.",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "import:csv": "node scripts/importCsv.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.0",
+    "helmet": "^8.3.0",
+    "mongoose": "^9.8.0"
+  }
+}
