@@ -64,4 +64,4 @@ const convidadoSchema = new mongoose.Schema(
 
 convidadoSchema.index({ ID_Familiar: 1, ID: 1 }, { unique: true });
 
-export const Convidado = mongoose.model("Convidado", convidadoSchema);
+export const Convidado = mongoose.model("convidados", convidadoSchema);

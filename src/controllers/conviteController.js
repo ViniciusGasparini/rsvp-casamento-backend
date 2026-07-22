@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { Convidado } from "../models/Convidado.js";
 import { deserializeChildren, serializeChildren } from "../utils/children.js";
+import { createBrasiliaDate } from "../utils/date.js";
 import { validateFamilyId, validateRsvpPayload } from "../utils/validation.js";
 
 const buildResponsePayload = (familyId, guests) => {
@@ -164,7 +165,7 @@ export const submitInvitationResponse = async (req, res) => {
 
       const normalized = validateRsvpPayload(req.body, guests);
       const childrenFields = serializeChildren(normalized.filhos);
-      const confirmationDate = new Date();
+      const confirmationDate = createBrasiliaDate();
       const responseById = new Map(
         normalized.guestResponses.map((response) => [response.id, response])
       );
